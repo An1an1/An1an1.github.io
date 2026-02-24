@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Private Membership — $1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            background-image: url('https://ibb.co/MkTBf1LL');  /* ← ЗАМЕНИ ЭТУ ССЫЛКУ НА СВОЮ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Тёмный оверлей, чтобы текст читался */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);  /* можно 0.6–0.7 если фото слишком светлое */
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        main {
+            position: relative;
+            z-index: 2;
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.3em;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .price {
+            font-size: 4em;
+            color: #00ff88;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00cc44;
+            color: #000;
+            font-size: 1.6em;
+            padding: 20px 70px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 50px auto 30px;
+            box-shadow: 0 10px 25px rgba(0, 255, 80, 0.4);
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.06);
+            background: #00ff66;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        footer-note {
+            margin-top: 80px;
+            font-size: 0.95em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <main>
+        <h1>Premium Private Membership</h1>
+        
+        <p>Get full exclusive access with just one click 💸</p>
+        
+        <div class="price">$1</div>
+
+        <!-- Кнопка оплаты (красивая) -->
+        <a href="#" 
+           onclick="document.getElementById('voletForm').submit(); return false;" 
+           class="btn">PAY</a>
+
+        <!-- ТВОЯ ФОРМА ОТ VOLET -->
+        <div class="form-container">
+            <form id="voletForm" method="post" action="https://account.volet.com/sci/">
+                <input type="hidden" name="ac_account_email" value="hello.rich.content@gmail.com">
+                <input type="hidden" name="ac_sci_name" value="Premium Private Membership">
+                <input type="hidden" name="ac_amount" value="1.00">
+                <input type="hidden" name="ac_currency" value="USD">
+                <input type="hidden" name="ac_order_id" value="123456789">
+                <input type="hidden" name="ac_sign" value="6c800fe15a6bf77ec5a821096df335cb59cb4b5b0cb1ff5110277a798a47f872">
+
+                <!-- ← Здесь потом подставишь реальные ссылки после хостинга -->
+                <input type="hidden" name="ac_success_url" value="https://твой-сайт.github.io/thank-you.html">
+                <input type="hidden" name="ac_success_url_method" value="GET">
+                <input type="hidden" name="ac_fail_url" value="https://твой-сайт.github.io">
+                <input type="hidden" name="ac_fail_url_method" value="GET">
+                <input type="hidden" name="ac_status_url" value="https://твой-make-webhook-url">
+                <input type="hidden" name="ac_status_url_method" value="POST">
+
+                <input type="hidden" name="ac_comments" value="Premium Private Membership">
+                <!-- <input type="submit" value="Оплатить">  эта кнопка скрыта -->
+            </form>
+        </div>
+
+        <div class="footer-note">
+            Payment is secure. After payment, you'll immediately see a link to your private channel.
+        </div>
+    </main>
+
+</body>
+</html>
