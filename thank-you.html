@@ -3,57 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Вот сюда вставляем авто-перенаправление через 3 секунды -->
-    <meta http-equiv="refresh" content="3;url=https://t.me/+99OkbpTGX8BjZjhi">
-    
+    <!-- Авто-редирект на канал через 5 секунд -->
+    <meta http-equiv="refresh" content="5;url=https://t.me/+990kbptGX8BJZJhi">
     <title>Thank you for your payment!</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #0f0f0f; 
-            color: #00ff00; 
-            text-align: center; 
-            padding: 100px 20px; 
+        body {
             margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            background-image: url('https://i.ibb.co/GvHRKLm/hf-20260222-095232-ff7e27a0-e19d-4f8a-8976-c73ed3667915.jpg'); /* ТВОЙ ФОН С ГЛАВНОЙ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
-        h1 { font-size: 3em; margin-bottom: 20px; }
-        .link-box {
-            font-size: 2em; 
-            color: #fff; 
-            background: #006600; 
-            padding: 30px; 
-            border-radius: 20px; 
-            margin: 40px auto; 
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55); /* Затемнение для читаемости */
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        main {
+            position: relative;
+            z-index: 2;
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #00ff88;
+        }
+
+        p {
+            font-size: 1.4em;
             max-width: 700px;
+            margin: 0 auto 40px;
         }
-        a { 
-            color: #00ff88; 
-            text-decoration: underline; 
+
+        .btn {
+            display: inline-block;
+            background: #00cc44;
+            color: #000000; /* ЧЁРНЫЙ текст на кнопке */
+            font-size: 1.8em;
+            font-weight: bold;
+            padding: 20px 80px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 255, 80, 0.4);
+            transition: all 0.3s;
+            margin: 40px auto;
         }
-        .small { 
-            font-size: 1.1em; 
-            color: #aaa; 
-            margin-top: 60px; 
+
+        .btn:hover {
+            transform: scale(1.06);
+            background: #00ff66;
+        }
+
+        .small {
+            font-size: 1.1em;
+            color: #aaa;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
-    <h1>✅ Payment successful!</h1>
-    
-    <p style="font-size: 1.4em; margin: 30px 0;">
-        You’ll be automatically redirected to the private channel in 3 seconds.<br>
-        If it doesn’t happen — click the link below:
-    </p>
-    
-    <div class="link-box">
-        <a href="https://t.me/+99OkbpTGX8BjZjhi" target="_blank">
-            JOIN PRIVATE CHANNEL
+    <div class="overlay"></div>
+
+    <main>
+        <h1>✅ Payment successful!</h1>
+        <p>Follow the link</p>
+
+        <a href="https://t.me/+990kbptGX8BJZJhi" class="btn" target="_blank">
+            PRIVATE CHANNEL
         </a>
-    </div>
-    
-    <p class="small">
-        The link is valid. Don't lose it!
-    </p>
+
+        <p class="small">The link is valid. Don't lose it!</p>
+    </main>
 </body>
 </html>
